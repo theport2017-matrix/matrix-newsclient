@@ -1,0 +1,52 @@
+.top-level-box {
+  margin: 1.5vh 1.5vw;
+  border: 1px solid black;
+}
+
+#announcements {
+  position: absolute;
+  top: 1vh;
+  left: 1vw;
+  bottom: 67vh;
+  right: 34vw;
+}
+
+#weather {
+  position: absolute;
+  top: 1vh;
+  left: 67vw;
+  bottom: 1vh;
+  right: 1vw;
+}
+
+#news-0 {
+  position: absolute;
+  top: 34vh;
+  left: 1vw;
+  bottom: 34vh;
+  right: 67vw;
+}
+
+#news-1 {
+  position: absolute;
+  top: 34vh;
+  left: 34vw;
+  bottom: 34vh;
+  right: 34vw;
+}
+
+#news-2 {
+  position: absolute;
+  top: 67vh;
+  left: 1vw;
+  bottom: 1vh;
+  right: 67vw;
+}
+
+#news-3 {
+  position: absolute;
+  top: 67vh;
+  left: 34vw;
+  bottom: 1vh;
+  right: 34vw;
+}
