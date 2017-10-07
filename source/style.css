@@ -60,16 +60,22 @@ ul {
   list-style-type: none;
 }
 
-.column1-row1 li {
-
-    background-color: #fe9;
+.announcement-box li {
     font-family: calibri;
     border-radius: 5px;
     margin: 5px;
     padding: 5px;
 }
 
-.column1-row1 h1 {
+.announcement-box li.level-warning {
+    background-color: #fe9;
+}
+
+.announcement-box li.level-info {
+    background-color: #aec6cf;
+}
+
+.announcement-box h1 {
   padding: 5px;
 }
 
