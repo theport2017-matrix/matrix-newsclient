@@ -6,6 +6,7 @@ import AnnouncementBox from './AnnouncementBox.jsx';
 import News from './News';
 import Twitter from './Twitter';
 import EmergencyOverlay from './Emergency.js';
+import FontAwesome from 'react-fontawesome';
 
 const ROOM_ID = '!OfRBJBuhWHWNKplCtn:matrix.org';
 const TWITTER_ROOM_ID = '!kgfNoSRLkBFxmVGvxw:matrix.org';
