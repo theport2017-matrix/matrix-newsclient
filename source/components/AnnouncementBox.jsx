@@ -15,7 +15,7 @@ export default class AnnouncementBox extends React.Component {
     render() {
         const announcements = this.state.announcements;
         return (
-            <div>
+            <div className="announcement-box">
             <h1>Communicamp - Announcements</h1>
               <ul>
                 {announcements.filter((msg) => (msg.body != undefined)).map((item, i) => (
