@@ -6,7 +6,7 @@ class Article extends React.Component {
 
     return (<div className="article">
       <img src={this.props.image}/>
-      <h1>{this.props.title}</h1>
+      <h3>{this.props.title}</h3>
       <p>{shortBody}...</p>
     </div>);
   }

@@ -1,0 +1,21 @@
+.twitter-feed {
+  overflow: scroll;
+}
+
+.tweet {
+  padding: $padding-small;
+  border: 1px solid $gray-color;
+  border-radius: 4px;
+
+  & + & {
+    margin-top: $padding-small;
+  }
+}
+
+.tweet-sender {
+  color: $highlight-color;
+}
+
+.tweet-body {
+  word-wrap: break-word;
+}

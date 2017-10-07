@@ -16,11 +16,14 @@ export default class Twitter extends React.Component {
     render() {
         const tweets = this.state.tweets;
         return (
-            <div id="tweet-feed" className="tweets-box">
+            <div>
                 <h2>Tweet Feed</h2>
-                <ul>
+                <ul className="twitter-feed">
                     {tweets.filter((item) => (item.content.body != undefined)).map((item, i) => (
-                        <li key={i}>{item.sender}: {item.content.body}</li>
+                        <li className="tweet" key={i}>
+                            <div className="tweet-sender">{item.sender}</div>
+                            <div className="tweet-body">{item.content.body}</div>
+                        </li>
                     ))}
                 </ul>
             </div>
