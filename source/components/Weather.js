@@ -36,7 +36,7 @@ export default class WeatherBox extends React.Component {
             </span>
             <span className="temperature">
               {day.temperature}
-              <span className="unit">C</span>
+              <span className="unit">°C</span>
             </span>
             <span className="timestamp">{day.weekDay}</span>
           </li>
