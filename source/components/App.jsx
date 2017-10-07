@@ -26,9 +26,9 @@ export default class App extends React.Component {
   componentDidMount() {
     this.props.client.on("Room.timeline", (event) => {
         if (event.getRoomId() == ROOM_ID) {
+            const content = event.getContent();
             switch (event.getType()) {
               case 'm.room.message':
-                const content = event.getContent();
                 const ts = moment(event.getTs());
                 if (content.level === 'emergency') {
                   // check that emergency alert is recent (< 10s old)
@@ -44,13 +44,14 @@ export default class App extends React.Component {
                 }
                 break;
               case 'c.news':
+                content._timeReceived = event.getTs();
                 this.setState({
-                  news: this.state.news.concat([event.getContent()]),
+                  news: this.state.news.concat([content]),
                 });
                 break;
               case 'c.weather':
                 this.setState({
-                  weather: this.state.weather.concat([event.getContent()]),
+                  weather: this.state.weather.concat([content]),
                 });
                 break;
             }
