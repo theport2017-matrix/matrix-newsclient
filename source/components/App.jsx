@@ -98,10 +98,10 @@ export default class App extends React.Component {
           <WeatherBox data={this.state.weather}/>
         </div>
         <div className="grid-item sidebar">
-          <div className="grid-item sidebar-item sidebar-announcements">
+          <div className="sidebar-item sidebar-announcements">
             <AnnouncementBox announcements={this.state.announcements}/>
           </div>
-          <div className="grid-item sidebar-item sidebar-twitter">
+          <div className="sidebar-item sidebar-twitter">
             <Twitter ref={(box) => {this.twitterBox = box}}/>
           </div>
         </div>

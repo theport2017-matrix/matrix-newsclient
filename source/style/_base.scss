@@ -55,11 +55,9 @@ ul {
   display: grid;
   height: 100vh;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 50px 1fr 2fr 30px;
-  // grid-gap: 1rem;
+  grid-template-rows: 60px 1fr 30px;
   grid-template-areas:
     'header sidebar-weather'
-    'content sidebar'
     'content sidebar'
     'footer footer';
 }
@@ -76,19 +74,23 @@ ul {
 
 .sidebar {
   display: grid;
-  margin: $padding 0;
+  overflow: hidden;
+  margin: $padding;
   grid-area: sidebar;
+  grid-template-rows: 1fr 3fr;
   grid-template-areas:
-  'sidebar-announcements'
-  'sidebar-twitter';
+    'sidebar-announcements'
+    'sidebar-twitter';
 }
 
 .sidebar-item {
   max-height: 100%;
-  padding-right: $padding;
   overflow: hidden;
-}
 
+  & + & {
+    margin-top: $padding;
+  }
+}
 
 .sidebar-announcements {
   grid-area: sidebar-announcements;
@@ -103,6 +105,7 @@ ul {
   align-items: center;
   grid-area: sidebar-weather;
   background: $highlight-color;
+  padding: 0 $padding;
 }
 
 .content {
