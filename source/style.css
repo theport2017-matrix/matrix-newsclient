@@ -10,7 +10,7 @@ h1 {
   font-size: 15pt;
 }
 
-p {
+p, .weather-box {
   font-family: Calibri;
 }
 
@@ -141,6 +141,10 @@ ul {
   color: #777;
   font-size: 1.6em;
   margin-right: 0.2em;
+}
+
+.weather-box li:first-child .icon {
+  font-size: 3em;
 }
 
 .weather-box li .timestamp {
