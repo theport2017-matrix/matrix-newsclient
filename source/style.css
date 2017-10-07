@@ -96,6 +96,11 @@ ul {
   justify-content: space-evenly;
 }
 
+.newsHeader {
+  padding: 20px 30px 10px 30px;
+  font-size: 30pt;
+}
+
 .article img {
   width: 100%;
 }
