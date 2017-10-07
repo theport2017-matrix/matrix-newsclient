@@ -7,7 +7,7 @@
 
 h1 {
   font-family: Lucida Grande;
-  font-size: 20pt;
+  font-size: 15pt;
 }
 
 p {
@@ -53,7 +53,11 @@ body {
 
 /* Announcements */
 .column1-row1 {
-  height: 20vh;
+  height: 33vh;
+}
+
+.column1-row1 h1 {
+    font-size: 32pt;
 }
 
 ul {
@@ -75,7 +79,7 @@ ul {
 
 /* News */
 .column1-row2 {
-  height: 80vh;
+  height: 66vh;
   background-color: #eee;
 }
 

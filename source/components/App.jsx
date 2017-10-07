@@ -17,14 +17,15 @@ const news = [ { title: 'Spain set for pro-unity rallies',
     body: 'The new rule could strip birth control coverage from millions of women, demolishing an Obama provision.',
     image: 'https://ichef.bbci.co.uk/images/ic/1024x576/p05hdggf.jpg',
     local: false },
-  { title: 'No more Shakespeare for Sir Ian McKellen?',
-    body: 'The actor says his current role as King Lear is likely to be his last big Shakespeare role.',
-    image: 'https://ichef.bbci.co.uk/images/ic/1024x576/p05j82jw.jpg',
-    local: false },
-  { title: 'Ryanair\'s top operations boss resigns',
-    body: 'The airline will bid farewell to operations manager who had ultimate responsibility for pilot rosters',
-    image: 'https://ichef.bbci.co.uk/news/1024/cpsprodpb/3E88/production/_98180061_n7faahvq.jpg',
-    local: false } ];
+    ];
+  // { title: 'No more Shakespeare for Sir Ian McKellen?',
+  //   body: 'The actor says his current role as King Lear is likely to be his last big Shakespeare role.',
+  //   image: 'https://ichef.bbci.co.uk/images/ic/1024x576/p05j82jw.jpg',
+  //   local: false },
+  // { title: 'Ryanair\'s top operations boss resigns',
+  //   body: 'The airline will bid farewell to operations manager who had ultimate responsibility for pilot rosters',
+  //   image: 'https://ichef.bbci.co.uk/news/1024/cpsprodpb/3E88/production/_98180061_n7faahvq.jpg',
+  //   local: false } ];
 
 import AnnouncementBox from './AnnouncementBox.jsx';
 
