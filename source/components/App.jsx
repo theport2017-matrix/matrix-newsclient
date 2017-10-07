@@ -41,11 +41,16 @@ export default class App extends React.Component {
             this.twitterBox.addTweet(event);
         }
     });
+    props.client.on("sync", (state) => {
+      if (state === "SYNCING") {
+        setTimeout(() => {
+          console.info('Back paginating to get older events!');
+          props.client.scrollback(props.client.getRoom(ROOM_ID));
+        }, 1000)
+      }
+    });
+
     props.client.startClient();
-    setTimeout(() => {
-      console.info('Back paginating to get older events!');
-      props.client.scrollback(props.client.getRoom(ROOM_ID));
-    }, 1000)
   }
 
   render() {

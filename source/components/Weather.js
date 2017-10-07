@@ -16,7 +16,12 @@ export default class WeatherBox extends React.Component {
     const forecast = this.props.data.map((day) => {
       const dt = moment(day.datestamp);
       return {
-        weekDay: dt.format("ddd"),
+        weekDay: dt.calendar(null, {
+          sameDay: '[Today]',
+          nextDay: '[Tomorrow]',
+          sameWeek: 'ddd',
+          nextWeek: 'ddd',
+        }),
         timestamp: dt,
         className: ICON_MAP[day.type],
         temperature: day.temperature
