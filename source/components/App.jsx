@@ -43,9 +43,9 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div class="root">
-        <div class="column1">
-          <div class="column1-row1">
+      <div className="root">
+        <div className="column1">
+          <div className="column1-row1">
             <AnnouncementBox ref={(box) => {this.announcementBox = box}}/>
           </div>
           <div className="column1-row2">
