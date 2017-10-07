@@ -129,6 +129,11 @@ ul {
   width: 100%;
 }
 
+.article p {
+  overflow-y: hidden;
+  max-height: 80px;
+}
+
 .article {
   margin: 0.25% 0%;
   padding: 5px;
