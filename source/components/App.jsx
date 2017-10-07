@@ -10,6 +10,8 @@ import EmergencyOverlay from './Emergency.js';
 const ROOM_ID = '!OfRBJBuhWHWNKplCtn:matrix.org';
 const TWITTER_ROOM_ID = '!kgfNoSRLkBFxmVGvxw:matrix.org';
 
+let backPaginated = false;
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -59,10 +61,13 @@ export default class App extends React.Component {
     });
     this.props.client.on("sync", (state) => {
       if (state === "SYNCING") {
-        setTimeout(() => {
-          console.info('Back paginating to get older events!');
-          this.props.client.scrollback(this.props.client.getRoom(ROOM_ID), 1000);
-        }, 1000)
+        if (!backPaginated){
+          backPaginated = true;
+          setTimeout(() => {
+            console.info('Back paginating to get older events!');
+            this.props.client.scrollback(this.props.client.getRoom(ROOM_ID), 10000);
+          }, 1000)
+        }
       }
     });
 
