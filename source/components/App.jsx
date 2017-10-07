@@ -82,7 +82,7 @@ export default class App extends React.Component {
         <EmergencyOverlay message={this.state.emergency}/>
         <div className="grid-item header">
           <h1>
-            <FontAwesome name="fa-dot-circle-o"/>
+            <FontAwesome name="dot-circle-o"/>
             Communicamp
           </h1>
         </div>
