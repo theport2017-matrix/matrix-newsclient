@@ -18,7 +18,7 @@ export default class AnnouncementBox extends React.Component {
             <div>
             <h1>Communicamp - Announcements</h1>
               <ul>
-                {announcements.map((item, i) => (
+                {announcements.filter((msg) => (msg.body != undefined)).map((item, i) => (
                     <li key={i} className={'level-' + item.level}>{item.body}</li>
                 ))}
               </ul>
