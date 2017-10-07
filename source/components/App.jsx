@@ -56,22 +56,23 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="root">
-        <div className="column1">
-          <div className="column1-row1">
-            <WeatherBox data={this.state.weather}/>
-          </div>
-          <div className="column1-row2">
-            <News news={this.state.news} />
+        <div className="header">
+          <h1>Communicamp</h1>
+        </div>
+        <div className="content">
+          <WeatherBox data={this.state.weather}/>
+          <News news={this.state.news}/>
+        </div>
+        <div className="sidebar">
+          <AnnouncementBox announcements={this.state.announcements}/>
+          <Twitter ref={(box) => {this.twitterBox = box}}/>
+        </div>
+        <div className="footer">
+          <div>
+            Built with React and powered by Matrix
           </div>
         </div>
-        <div className="column2">
-          <div className="column2-row1">
-            <AnnouncementBox announcements={this.state.announcements}/>
-          </div>
-          <div className="column2-row1">
-            <Twitter ref={(box) => {this.twitterBox = box}}/>
-          </div>
-        </div>
-      </div>);
+      </div>
+    );
   }
 }
