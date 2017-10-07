@@ -13,6 +13,7 @@ const TWITTER_ROOM_ID = '!kgfNoSRLkBFxmVGvxw:matrix.org';
 
 let backPaginated = false;
 
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
