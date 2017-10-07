@@ -2,10 +2,12 @@ import React from 'react';
 
 class Article extends React.Component {
   render() {
+    const shortBody = this.props.body.slice(0, this.props.body.indexOf(' ', 100));
+
     return (<div className="article">
       <img src={this.props.image}/>
       <h1>{this.props.title}</h1>
-      <p>{this.props.body}</p>
+      <p>{shortBody}...</p>
     </div>);
   }
 }
