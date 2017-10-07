@@ -123,6 +123,36 @@ ul {
   padding: 5px;
   background-color: #aaa;
 }
+
+.weather-box {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.weather-box li {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.weather-box li .icon {
+  color: #777;
+  font-size: 1.6em;
+  margin-right: 0.2em;
+}
+
+.weather-box li .timestamp {
+  display: block;
+}
+
+.weather-box li .temperature .unit {
+  margin-left: 0.1em;
+  font-size: 0.8em;
+}
+
+
 /*
 .announcement-box {
   padding: 5px;
