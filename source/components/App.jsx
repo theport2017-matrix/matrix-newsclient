@@ -16,8 +16,10 @@ export default class App extends React.Component {
       "news": [],
       "weather": []
     };
-    props.client.on("Room.timeline", (event) => {
-        console.info(event.getType());
+  }
+
+  componentDidMount() {
+    this.props.client.on("Room.timeline", (event) => {
         if (event.getRoomId() == ROOM_ID) {
             switch (event.getType()) {
               case 'm.room.message':
@@ -41,16 +43,16 @@ export default class App extends React.Component {
             this.twitterBox.addTweet(event);
         }
     });
-    props.client.on("sync", (state) => {
+    this.props.client.on("sync", (state) => {
       if (state === "SYNCING") {
         setTimeout(() => {
           console.info('Back paginating to get older events!');
-          props.client.scrollback(props.client.getRoom(ROOM_ID));
+          this.props.client.scrollback(this.props.client.getRoom(ROOM_ID));
         }, 1000)
       }
     });
 
-    props.client.startClient();
+    this.props.client.startClient();
   }
 
   render() {
