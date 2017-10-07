@@ -24,6 +24,8 @@ html {
 
 body {
   height: 100vh;
+  max-width: 80vw;
+  margin: auto
 }
 
 .root {
@@ -52,6 +54,10 @@ body {
 /* Announcements */
 .column1-row1 {
   height: 20vh;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .column1-row1 li {
