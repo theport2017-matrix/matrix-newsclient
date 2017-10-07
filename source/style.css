@@ -1,52 +1,57 @@
-.top-level-box {
-  margin: 1.5vh 1.5vw;
-  border: 1px solid black;
+
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
 }
 
-#announcements {
-  position: absolute;
-  top: 1vh;
-  left: 1vw;
-  bottom: 67vh;
-  right: 34vw;
+#app-root {
+  height: 100vh;
 }
 
-#weather {
-  position: absolute;
-  top: 1vh;
-  left: 67vw;
-  bottom: 1vh;
-  right: 1vw;
+html {
+  height: 100vh;
 }
 
-#news-0 {
-  position: absolute;
-  top: 34vh;
-  left: 1vw;
-  bottom: 34vh;
-  right: 67vw;
+body {
+  height: 100vh;
 }
 
-#news-1 {
-  position: absolute;
-  top: 34vh;
-  left: 34vw;
-  bottom: 34vh;
-  right: 34vw;
+.root {
+  height: 100vh;
+  display: flex;
 }
 
-#news-2 {
-  position: absolute;
-  top: 67vh;
-  left: 1vw;
-  bottom: 1vh;
-  right: 67vw;
+.column1 {
+  flex-grow: 3;
+
+  height: 100vh;
 }
 
-#news-3 {
-  position: absolute;
-  top: 67vh;
-  left: 34vw;
-  bottom: 1vh;
-  right: 34vw;
+.column2 {
+  flex-grow: 1;
+
+  height: 100vh;
+  padding: 5px;
+}
+
+/* Announcements */
+.column1-row1 {
+  height: 20vh;
+  padding: 5px;
+  background-color: #888;
+}
+
+/* News */
+.column1-row2 {
+  height: 80vh;
+  padding: 5px;
+  background-color: #ccc;
+}
+
+/* Weather */
+.column2-row1 {
+  height: 100vh;
+  padding: 5px;
+  background-color: #aaa;
 }
