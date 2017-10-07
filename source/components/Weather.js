@@ -29,8 +29,8 @@ export default class WeatherBox extends React.Component {
     }).sort((d1, d2) => d1.timestamp.subtract(d2));
     return (
       <ul className="weather-box">
-        {forecast.map((day) => (
-          <li className="day">
+        {forecast.map((day, index) => (
+          <li className="weather-day">
             <span className="icon">
               <WeatherIcons name={day.className} />
             </span>
@@ -38,7 +38,7 @@ export default class WeatherBox extends React.Component {
               {day.temperature}
               <span className="unit">°C</span>
             </span>
-            <span className="timestamp">{day.weekDay}</span>
+            {index>0?<span className="timestamp">{day.weekDay}</span>:null}
           </li>
         ))}
       </ul>

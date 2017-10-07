@@ -1,0 +1,33 @@
+.weather-box {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: center;
+  // padding: 0 $padding;
+  justify-content: space-between;
+}
+
+.weather-day {
+  text-align: center;
+
+  .icon {
+    font-size: 1.6em;
+  }
+
+  &:first-child .icon {
+    font-size: 2.5em;
+  }
+
+  .timestamp {
+    display: block;
+  }
+
+  .temperature {
+    margin-left: $padding-tiny;
+  }
+
+  .unit {
+    font-size: 0.8em;
+  }
+}

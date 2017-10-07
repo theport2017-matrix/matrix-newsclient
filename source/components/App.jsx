@@ -85,19 +85,25 @@ export default class App extends React.Component {
       <div className="grid">
         <EmergencyOverlay message={this.state.emergency}/>
         <div className="grid-item header">
-          <h1>
-            C<FontAwesome name="dot-circle-o"/>mmuniCamp
-          </h1>
+          <div className="header-title">
+            <h1>
+              C<FontAwesome name="dot-circle-o"/>mmuniCamp
+            </h1>
+          </div>
         </div>
         <div className="grid-item content">
-          <WeatherBox data={this.state.weather}/>
           <News news={this.state.news}/>
         </div>
-        <div className="grid-item sidebar-item sidebar-announcements">
-          <AnnouncementBox announcements={this.state.announcements}/>
+        <div className="grid-item sidebar-item sidebar-weather">
+          <WeatherBox data={this.state.weather}/>
         </div>
-        <div className="grid-item sidebar-item sidebar-twitter">
-          <Twitter ref={(box) => {this.twitterBox = box}}/>
+        <div className="grid-item sidebar">
+          <div className="grid-item sidebar-item sidebar-announcements">
+            <AnnouncementBox announcements={this.state.announcements}/>
+          </div>
+          <div className="grid-item sidebar-item sidebar-twitter">
+            <Twitter ref={(box) => {this.twitterBox = box}}/>
+          </div>
         </div>
         <div className="grid-item footer">
           <div>
