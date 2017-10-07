@@ -57,7 +57,7 @@ body {
 
 /* Weather */
 .column1-row1 {
-  height: 33vh;
+  height: 25vh;
 }
 
 .column1-row1 h1 {
@@ -89,7 +89,7 @@ ul {
 
 /* News */
 .column1-row2 {
-  height: 66vh;
+  height: 75vh;
   background-color: #eee;
 }
 
@@ -112,7 +112,7 @@ ul {
 .article {
   margin: 1.25% 0%;
   padding: 5px;
-  width: 45%;
+  width: 25%;
   height: 45%;
   background-color: white;
 }

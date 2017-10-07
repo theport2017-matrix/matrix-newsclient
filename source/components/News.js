@@ -14,7 +14,7 @@ export default class News extends React.Component {
   render() {
 
     // TODO: Filter on `local` key
-    const globalNews = this.props.news.slice(-4);
+    const globalNews = this.props.news.slice(-6);
 
     const newsItems = globalNews.map((article, index) => {
       return <Article key={index} title={article.title} body={article.body} image={article.image}/>;
