@@ -1,5 +1,9 @@
 $highlight-color: #34495e;
+$gray-color: #95a5a6;
+$black-color: #333;
+
 $padding: 1rem;
+$padding-small: 0.5rem;
 
 * {
   margin: 0px;
@@ -12,6 +16,7 @@ html {
 }
 
 body {
+  color: $black-color;
   max-height: 100vh;
   max-width: 100vw;
   margin: auto;
@@ -24,7 +29,7 @@ h1 {
 
 h2 {
   font-family: Lucida Grande;
-  // font-size: 13pt;
+  margin-bottom: $padding-small;
 }
 
 p, .weather-box {
@@ -66,8 +71,9 @@ ul {
 }
 
 .sidebar-item {
+  max-height: 100%;
   padding-right: $padding;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .sidebar-announcements {
@@ -83,6 +89,7 @@ ul {
   flex-direction: column;
   grid-area: content;
   padding-left: $padding;
+  overflow: hidden;
 }
 
 .header,
@@ -197,11 +204,6 @@ ul {
 .announcement-box h3 {
   margin-bottom: 0.5em;
 }*/
-
-/*Tweets*/
-.tweets-box {
-  grid-area: tweets;
-}
 
 /* Emergency Overlay */
 .emergency-overlay {
