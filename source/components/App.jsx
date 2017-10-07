@@ -69,7 +69,7 @@ export default class App extends React.Component {
         </div>
         <div className="footer">
           <div>
-            Built with React and powered by Matrix
+            Built with React and powered by [matrix] and newsAPI.org
           </div>
         </div>
       </div>
