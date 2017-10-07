@@ -80,3 +80,12 @@ body {
   padding: 5px;
   background-color: #aaa;
 }
+
+.announcement-box {
+  padding: 5px;
+  line-height: 1.2em;
+}
+
+.announcement-box h3 {
+  margin-bottom: 0.5em;
+}

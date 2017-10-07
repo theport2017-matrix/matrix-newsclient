@@ -15,11 +15,14 @@ export default class AnnouncementBox extends React.Component {
     render() {
         const announcements = this.state.announcements;
         return (
-            <ul>
+            <div className="announcement-box">
+              <h3>Announcements</h3>
+              <ul>
                 {announcements.map((item, i) => (
                     <li key={i} className={'level-' + item.level}>{item.body}</li>
                 ))}
-            </ul>
+              </ul>
+            </div>
         );
     }
 }
