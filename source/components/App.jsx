@@ -1,9 +1,11 @@
+import moment from 'moment';
 import React from 'react';
 
 import WeatherBox from './Weather.js';
 import AnnouncementBox from './AnnouncementBox.jsx';
 import News from './News';
 import Twitter from './Twitter';
+import EmergencyOverlay from './Emergency.js';
 
 const ROOM_ID = '!OfRBJBuhWHWNKplCtn:matrix.org';
 const TWITTER_ROOM_ID = '!kgfNoSRLkBFxmVGvxw:matrix.org';
@@ -14,16 +16,30 @@ export default class App extends React.Component {
     this.state = {
       "announcements": [],
       "news": [],
-      "weather": []
+      "weather": [],
+      "emergency": null
     };
-    props.client.on("Room.timeline", (event) => {
-        console.info(event.getType());
+  }
+
+  componentDidMount() {
+    this.props.client.on("Room.timeline", (event) => {
         if (event.getRoomId() == ROOM_ID) {
             switch (event.getType()) {
               case 'm.room.message':
-                this.setState({
-                  announcements: this.state.announcements.concat([event.getContent()]),
-                });
+                const content = event.getContent();
+                const ts = moment(event.getTs());
+                if (content.level === 'emergency') {
+                  // check that emergency alert is recent (< 30s old)
+                  if (moment().diff(ts) < 30000) {
+                    this.setState({
+                      emergency: content.body
+                    });
+                  }
+                } else {
+                  this.setState({
+                    announcements: this.state.announcements.concat([content]),
+                  });
+                }
                 break;
               case 'c.news':
                 this.setState({
@@ -41,21 +57,22 @@ export default class App extends React.Component {
             this.twitterBox.addTweet(event);
         }
     });
-    props.client.on("sync", (state) => {
+    this.props.client.on("sync", (state) => {
       if (state === "SYNCING") {
         setTimeout(() => {
           console.info('Back paginating to get older events!');
-          props.client.scrollback(props.client.getRoom(ROOM_ID));
+          this.props.client.scrollback(this.props.client.getRoom(ROOM_ID));
         }, 1000)
       }
     });
 
-    props.client.startClient();
+    this.props.client.startClient();
   }
 
   render() {
     return (
       <div className="root">
+        <EmergencyOverlay message={this.state.emergency}/>
         <div className="header">
           <h1>Communicamp</h1>
         </div>
