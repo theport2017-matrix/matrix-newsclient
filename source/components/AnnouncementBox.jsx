@@ -1,19 +1,8 @@
 import React from 'react';
 
 export default class AnnouncementBox extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            announcements: []
-        }
-    }
-
-    addMessage(content) {
-        this.setState({announcements: this.state.announcements.concat([content])});
-    }
-
     render() {
-        const announcements = this.state.announcements;
+        const announcements = this.props.announcements;
         return (
             <div className="announcement-box">
             <h1>Communicamp - Announcements</h1>

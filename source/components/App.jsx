@@ -11,6 +11,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      "announcements": [],
       "news": [],
     };
     props.client.on("Room.timeline", (event) => {
@@ -18,8 +19,10 @@ export default class App extends React.Component {
         if (event.getRoomId() == ROOM_ID) {
             switch (event.getType()) {
               case 'm.room.message':
-                this.announcementBox.addMessage(event.getContent());
-              break;
+                this.setState({
+                  announcements: this.state.announcements.concat([event.getContent()]),
+                });
+                break;
               case 'c.news':
                 this.setState({
                   news: this.state.news.concat([event.getContent()]),
@@ -51,7 +54,7 @@ export default class App extends React.Component {
         </div>
         <div className="column2">
           <div className="column2-row1">
-            <AnnouncementBox ref={(box) => {this.announcementBox = box}}/>
+            <AnnouncementBox announcements={this.state.announcements}/>
           </div>
           <div className="column2-row1">
             <Twitter ref={(box) => {this.twitterBox = box}}/>
