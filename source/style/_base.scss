@@ -5,6 +5,9 @@ $black-color: #333;
 $padding: 1rem;
 $padding-small: 0.5rem;
 
+$header-font: 'Open Sans', sans-serif;
+$paragraph-font: 'Libre Baskerville', serif;
+
 * {
   margin: 0px;
   padding: 0px;
@@ -22,18 +25,21 @@ body {
   margin: auto;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: $header-font;
+}
+
 h1 {
-  font-family: Lucida Grande;
   font-size: 17pt;
 }
 
 h2 {
-  font-family: Lucida Grande;
   margin-bottom: $padding-small;
 }
 
 p, .weather-box {
-  font-family: Calibri;
+  font-family: $paragraph-font;
+  font-size: 13px;
 }
 
 ul {
@@ -116,7 +122,7 @@ ul {
 }
 
 .announcement-box li {
-    font-family: calibri;
+    font-family: $paragraph-font;
     border-radius: 5px;
     margin-bottom: 5px;
     padding: 5px;
