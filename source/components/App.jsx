@@ -71,20 +71,25 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="root">
+      <div className="grid">
         <EmergencyOverlay message={this.state.emergency}/>
-        <div className="header">
-          <h1>Communicamp</h1>
+        <div className="grid-item header">
+          <h1>
+            <FontAwesome name="fa-dot-circle-o"/>
+            Communicamp
+          </h1>
         </div>
-        <div className="content">
-          <WeatherBox data={this.state.weather}/>
+        <div className="grid-item content">
+          {/* <WeatherBox data={this.state.weather}/> */}
           <News news={this.state.news}/>
         </div>
-        <div className="sidebar">
+        <div className="grid-item sidebar-item sidebar-announcements">
           <AnnouncementBox announcements={this.state.announcements}/>
+        </div>
+        <div className="grid-item sidebar-item sidebar-twitter">
           <Twitter ref={(box) => {this.twitterBox = box}}/>
         </div>
-        <div className="footer">
+        <div className="grid-item footer">
           <div>
             Built with React and powered by [matrix] and newsAPI.org
           </div>

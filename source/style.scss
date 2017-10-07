@@ -1,4 +1,5 @@
 $highlight-color: #34495e;
+$padding: 1rem;
 
 * {
   margin: 0px;
@@ -13,12 +14,12 @@ html {
 body {
   max-height: 100vh;
   max-width: 100vw;
-  margin: auto
+  margin: auto;
 }
 
 h1 {
   font-family: Lucida Grande;
-  font-size: 15pt;
+  font-size: 17pt;
 }
 
 p, .weather-box, .footer {
@@ -33,15 +34,16 @@ ul {
   height: 100vh;
 }
 
-.root {
+.grid {
   display: grid;
   height: 100vh;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 50px 1fr 30px;
+  grid-template-rows: 50px 1fr 2fr 30px;
   grid-gap: 1rem;
   grid-template-areas:
     "header header"
-    "content sidebar"
+    "content sidebar-announcements"
+    "content sidebar-twitter"
     "footer footer";
 }
 
@@ -55,28 +57,35 @@ ul {
 
 .header {
   display: flex;
-  grid-area: header;
+  font-weight: bold;
 }
 
-.sidebar {
-  grid-area: sidebar;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+.sidebar-item {
+  padding-right: $padding;
+  overflow: scroll;
+}
+
+.sidebar-announcements {
+  grid-area: sidebar-announcements;
+}
+
+.sidebar-twitter {
+  grid-area: sidebar-twitter;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   grid-area: content;
+  padding-left: $padding;
 }
 
 .header,
 .footer {
   background: $highlight-color;
   color: white;
-  font-weight: bold;
   display: flex;
+  padding: 0 $padding;
 }
 
 .header > *,
@@ -84,21 +93,20 @@ ul {
   align-self: center;
 }
 
+.footer {
+  justify-content: center;
+}
+
 /*Announcements*/
 .announcement-box {
   grid-area: announcements;
-  padding: 5px;
   line-height: 1.2em;
-}
-
-.announcement-box h3 {
-  /*margin-bottom: 0.5em;*/
 }
 
 .announcement-box li {
     font-family: calibri;
     border-radius: 5px;
-    margin: 5px;
+    margin-bottom: 5px;
     padding: 5px;
 }
 
@@ -110,21 +118,12 @@ ul {
     background-color: #aec6cf;
 }
 
-.announcement-box h1 {
-  padding: 5px;
-}
-
 /* News */
 .news {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
-  justify-content: space-evenly;
-}
-
-.newsHeader {
-  padding: 20px 30px 10px 30px;
-  font-size: 30pt;
+  justify-content: space-between;
 }
 
 .article img {
@@ -140,7 +139,6 @@ ul {
 
 .article {
   margin: 0.25% 0%;
-  padding: 5px;
   width: 30%;
   height: 45%;
   background-color: white;
