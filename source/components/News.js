@@ -16,14 +16,20 @@ export default class News extends React.Component {
     // TODO: Filter on `local` key
     const globalNews = this.props.news.slice(-6);
 
-    const newsItems = globalNews.map((article, index) => {
-      return <Article key={index} title={article.title} body={article.body} image={article.image}/>;
+    const newsItems = {};
+
+    globalNews.forEach((article, index) => {
+      const element = <Article key={index} title={article.title} body={article.body} image={article.image}/>;
+
+      if (!newsItems[article.title]) {
+        newsItems[article.title] = element;
+      }
     });
 
     return (<div>
       <h1 className="newsHeader">News</h1>
       <div className="news">
-          {newsItems}
+          {Object.keys(newsItems).map((k) => newsItems[k])}
       </div>
     </div>);
   }
