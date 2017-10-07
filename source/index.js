@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import SDK from 'matrix-js-sdk'
 import App from './components/App.jsx';
 
-import './style.css';
+import './style.scss';
 
 // SDK documentation: https://matrix-org.github.io/matrix-js-sdk/0.8.4/module-client.html
 let client = SDK.createClient({
