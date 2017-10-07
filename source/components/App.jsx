@@ -26,13 +26,27 @@ const news = [ { title: 'Spain set for pro-unity rallies',
     image: 'https://ichef.bbci.co.uk/news/1024/cpsprodpb/3E88/production/_98180061_n7faahvq.jpg',
     local: false } ];
 
+import AnnouncementBox from './AnnouncementBox.jsx';
+
+const ROOM_ID = '!OfRBJBuhWHWNKplCtn:matrix.org';
+
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    props.client.on("event", (event) => {
+        if (event.getRoomId() == ROOM_ID && event.getType() == 'm.room.message') {
+            this.announcementBox.addMessage(event.getContent());
+        }
+    });
+    props.client.startClient();
+  }
+
   render() {
     return (
-      <div className="root">
-        <div className="column1">
-          <div className="column1-row1">
-            Announcements
+      <div class="root">
+        <div class="column1">
+          <div class="column1-row1">
+            <AnnouncementBox ref={(box) => {this.announcementBox = box}}/>
           </div>
           <div className="column1-row2">
             <News news={news} />
