@@ -13,6 +13,8 @@ const TWITTER_ROOM_ID = '!kgfNoSRLkBFxmVGvxw:matrix.org';
 
 let backPaginated = false;
 
+import sirenWavUrl from '../siren.wav';
+document.getElementById('audio').src = sirenWavUrl;
 
 export default class App extends React.Component {
   constructor(props) {
@@ -38,6 +40,7 @@ export default class App extends React.Component {
                     this.setState({
                       emergency: content.body
                     });
+                    document.getElementById('audio').play();
                   }
                 } else {
                   this.setState({

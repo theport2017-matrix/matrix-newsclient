@@ -1,6 +1,5 @@
 import React from 'react';
 
-import sirenWavUrl from '../siren.wav';
 
 export default class EmergencyOverlay extends React.Component {
 
@@ -10,8 +9,6 @@ export default class EmergencyOverlay extends React.Component {
       flash: true,
     }
 
-    document.getElementById('audio').src = sirenWavUrl;
-    document.getElementById('audio').play();
   }
 
   componentWillMount() {
