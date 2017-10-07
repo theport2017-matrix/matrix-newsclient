@@ -12,7 +12,8 @@ export default class App extends React.Component {
     this.state = {
       "news": [],
     };
-    props.client.on("event", (event) => {
+    props.client.on("Room.timeline", (event) => {
+        console.info(event.getType());
         if (event.getRoomId() == ROOM_ID) {
             switch (event.getType()) {
               case 'm.room.message':
@@ -27,6 +28,10 @@ export default class App extends React.Component {
         }
     });
     props.client.startClient();
+    setTimeout(() => {
+      console.info('Back paginating to get older events!');
+      props.client.scrollback(props.client.getRoom(ROOM_ID));
+    }, 1000)
   }
 
   render() {
