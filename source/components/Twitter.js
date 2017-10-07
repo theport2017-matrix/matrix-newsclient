@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from 'react';
 
 export default class Twitter extends React.Component {
@@ -9,7 +10,7 @@ export default class Twitter extends React.Component {
     }
 
     addTweet(event) {
-        var tweet = {sender: event.getSender(), content: event.getContent()};
+        var tweet = {sender: event.getSender(), content: event.getContent(), date: moment(event.getDate())};
         this.setState({tweets: this.state.tweets.concat([tweet])});
     }
 
@@ -21,7 +22,12 @@ export default class Twitter extends React.Component {
                 <ul className="twitter-feed">
                     {tweets.filter((item) => (item.content.body != undefined)).map((item, i) => (
                         <li className="tweet" key={i}>
-                            <div className="tweet-sender">{item.sender}</div>
+                            <div className="tweet-title">
+                                <div className="tweet-sender-text">
+                                  <span className="tweet-sender">{item.sender}</span> said:
+                                </div>
+                                <div className="tweet-calendar">{item.date.calendar().toLowerCase()}</div>
+                            </div>
                             <div className="tweet-body">{item.content.body}</div>
                         </li>
                     ))}
