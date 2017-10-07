@@ -1,10 +1,11 @@
 import React from 'react';
-import News from './News';
-
 
 import AnnouncementBox from './AnnouncementBox.jsx';
+import News from './News';
+import Twitter from './Twitter';
 
 const ROOM_ID = '!OfRBJBuhWHWNKplCtn:matrix.org';
+const TWITTER_ROOM_ID = '!kgfNoSRLkBFxmVGvxw:matrix.org';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -24,6 +25,9 @@ export default class App extends React.Component {
                 });
               break;
             }
+        }
+        if (event.getRoomId() == TWITTER_ROOM_ID && event.getType() == 'm.room.message') {
+            this.twitterBox.addTweet(event);
         }
     });
     props.client.startClient();
@@ -45,7 +49,7 @@ export default class App extends React.Component {
             <AnnouncementBox ref={(box) => {this.announcementBox = box}}/>
           </div>
           <div className="column2-row1">
-            // Tweets go here
+            <Twitter ref={(box) => {this.twitterBox = box}}/>
           </div>
         </div>
       </div>);
