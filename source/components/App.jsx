@@ -29,8 +29,8 @@ export default class App extends React.Component {
                 const content = event.getContent();
                 const ts = moment(event.getTs());
                 if (content.level === 'emergency') {
-                  // check that emergency alert is recent (< 30s old)
-                  if (moment().diff(ts) < 30000) {
+                  // check that emergency alert is recent (< 10s old)
+                  if (moment().diff(ts) < 10000) {
                     this.setState({
                       emergency: content.body
                     });
