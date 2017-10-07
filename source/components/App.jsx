@@ -1,9 +1,11 @@
+import moment from 'moment';
 import React from 'react';
 
 import WeatherBox from './Weather.js';
 import AnnouncementBox from './AnnouncementBox.jsx';
 import News from './News';
 import Twitter from './Twitter';
+import EmergencyOverlay from './Emergency.js';
 
 const ROOM_ID = '!OfRBJBuhWHWNKplCtn:matrix.org';
 const TWITTER_ROOM_ID = '!kgfNoSRLkBFxmVGvxw:matrix.org';
@@ -14,7 +16,8 @@ export default class App extends React.Component {
     this.state = {
       "announcements": [],
       "news": [],
-      "weather": []
+      "weather": [],
+      "emergency": null
     };
   }
 
@@ -23,9 +26,20 @@ export default class App extends React.Component {
         if (event.getRoomId() == ROOM_ID) {
             switch (event.getType()) {
               case 'm.room.message':
-                this.setState({
-                  announcements: this.state.announcements.concat([event.getContent()]),
-                });
+                const content = event.getContent();
+                const ts = moment(event.getTs());
+                if (content.level === 'emergency') {
+                  // check that emergency alert is recent (< 30s old)
+                  if (moment().diff(ts) < 30000) {
+                    this.setState({
+                      emergency: content.body
+                    });
+                  }
+                } else {
+                  this.setState({
+                    announcements: this.state.announcements.concat([content]),
+                  });
+                }
                 break;
               case 'c.news':
                 this.setState({
@@ -58,6 +72,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="root">
+        <EmergencyOverlay message={this.state.emergency}/>
         <div className="header">
           <h1>Communicamp</h1>
         </div>
