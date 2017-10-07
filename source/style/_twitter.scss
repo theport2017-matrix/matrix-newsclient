@@ -1,7 +1,3 @@
-.twitter-feed {
-  overflow: scroll;
-}
-
 .tweet {
   padding: $padding-small;
   border: 1px solid $gray-color;
@@ -12,10 +8,24 @@
   }
 }
 
+.tweet-title {
+  display: flex;
+}
+
+.tweet-calendar {
+  color: $gray-color;
+}
+
+.tweet-sender-text {
+  flex-grow: 1;
+}
+
 .tweet-sender {
-  color: $highlight-color;
+  font-weight: bold;
 }
 
 .tweet-body {
   word-wrap: break-word;
+  margin-left: 1em;
+  margin-top: $padding-tiny;
 }

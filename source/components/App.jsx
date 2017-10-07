@@ -1,12 +1,12 @@
+import FontAwesome from 'react-fontawesome';
 import moment from 'moment';
 import React from 'react';
 
-import WeatherBox from './Weather.js';
+import WeatherBox from './Weather';
 import AnnouncementBox from './AnnouncementBox.jsx';
 import News from './News';
 import Twitter from './Twitter';
-import EmergencyOverlay from './Emergency.js';
-import FontAwesome from 'react-fontawesome';
+import EmergencyOverlay from './Emergency';
 
 const ROOM_ID = '!OfRBJBuhWHWNKplCtn:matrix.org';
 const TWITTER_ROOM_ID = '!kgfNoSRLkBFxmVGvxw:matrix.org';
