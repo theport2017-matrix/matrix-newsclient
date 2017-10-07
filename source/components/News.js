@@ -30,7 +30,7 @@ export default class News extends React.Component {
     });
 
     return (<div>
-      <h1 className="newsHeader">News</h1>
+      <h2 className="newsHeader">News</h2>
       <div className="news">
           {Object.keys(newsItems).map((k) => newsItems[k])}
       </div>

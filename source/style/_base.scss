@@ -1,0 +1,218 @@
+$highlight-color: #34495e;
+$padding: 1rem;
+
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  max-height: 100vh;
+  max-width: 100vw;
+  margin: auto;
+}
+
+h1 {
+  font-family: Lucida Grande;
+  font-size: 17pt;
+}
+
+h2 {
+  font-family: Lucida Grande;
+  // font-size: 13pt;
+}
+
+p, .weather-box {
+  font-family: Calibri;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#app-root {
+  height: 100vh;
+}
+
+.grid {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 50px 1fr 2fr 30px;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "header header"
+    "content sidebar-announcements"
+    "content sidebar-twitter"
+    "footer footer";
+}
+
+.header {
+  grid-area: header;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.header {
+  display: flex;
+  font-weight: bold;
+}
+
+.sidebar-item {
+  padding-right: $padding;
+  overflow: scroll;
+}
+
+.sidebar-announcements {
+  grid-area: sidebar-announcements;
+}
+
+.sidebar-twitter {
+  grid-area: sidebar-twitter;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  grid-area: content;
+  padding-left: $padding;
+}
+
+.header,
+.footer {
+  background: $highlight-color;
+  color: white;
+  display: flex;
+  padding: 0 $padding;
+}
+
+.header > *,
+.footer > * {
+  align-self: center;
+}
+
+.footer {
+  justify-content: center;
+}
+
+/*Announcements*/
+.announcement-box {
+  grid-area: announcements;
+  line-height: 1.2em;
+}
+
+.announcement-box li {
+    font-family: calibri;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.announcement-box li.level-warning {
+    background-color: #fe9;
+}
+
+.announcement-box li.level-info {
+    background-color: #aec6cf;
+}
+
+/* News */
+.news {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.article img {
+  width: 100%;
+  object-fit: cover;
+  max-height: 200px;
+}
+
+.article p {
+  overflow-y: hidden;
+  max-height: 80px;
+}
+
+.article {
+  margin: 0.25% 0%;
+  width: 30%;
+  height: 45%;
+  background-color: white;
+}
+
+/* Weather */
+.column2-row1 {
+  height: 50vh;
+  padding: 5px;
+  background-color: #aaa;
+}
+
+.weather-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.weather-box li {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.weather-box li .icon {
+  color: #777;
+  font-size: 1.6em;
+  margin-right: 0.2em;
+}
+
+.weather-box li:first-child .icon {
+  font-size: 3em;
+}
+
+.weather-box li .timestamp {
+  display: block;
+}
+
+.weather-box li .temperature .unit {
+  margin-left: 0.1em;
+  font-size: 0.8em;
+}
+
+
+/*
+.announcement-box {
+  padding: 5px;
+  line-height: 1.2em;
+}
+
+.announcement-box h3 {
+  margin-bottom: 0.5em;
+}*/
+
+/*Tweets*/
+.tweets-box {
+  grid-area: tweets;
+}
+
+/* Emergency Overlay */
+.emergency-overlay {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  color: #ff2233;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3em;
+  padding-top: 40vh;
+}
