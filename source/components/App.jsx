@@ -61,7 +61,7 @@ export default class App extends React.Component {
       if (state === "SYNCING") {
         setTimeout(() => {
           console.info('Back paginating to get older events!');
-          this.props.client.scrollback(this.props.client.getRoom(ROOM_ID));
+          this.props.client.scrollback(this.props.client.getRoom(ROOM_ID), 1000);
         }, 1000)
       }
     });
