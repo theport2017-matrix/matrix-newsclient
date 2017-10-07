@@ -82,12 +82,12 @@ export default class App extends React.Component {
         <EmergencyOverlay message={this.state.emergency}/>
         <div className="grid-item header">
           <h1>
-            <FontAwesome name="dot-circle-o"/>
-            Communicamp
+
+            C<FontAwesome name="dot-circle-o"/>mmunicamp
           </h1>
         </div>
         <div className="grid-item content">
-          {/* <WeatherBox data={this.state.weather}/> */}
+          <WeatherBox data={this.state.weather}/>
           <News news={this.state.news}/>
         </div>
         <div className="grid-item sidebar-item sidebar-announcements">
