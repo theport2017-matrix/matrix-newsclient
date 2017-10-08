@@ -34,7 +34,11 @@ export default class App extends React.Component {
             switch (event.getType()) {
               case 'm.room.message':
                 const ts = moment(event.getTs());
-                if (content.level === 'emergency') {
+                if (moment().diff(ts, 'hours') > 1) {
+                  // exclude announcements older than 1h
+                  return;
+                }
+                else if (content.level === 'emergency') {
                   // check that emergency alert is recent (< 10s old)
                   if (moment().diff(ts) < 10000) {
                     this.setState({
