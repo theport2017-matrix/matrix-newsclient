@@ -53,18 +53,14 @@ export default class News extends React.Component {
       }
     });
 
-
-
     return (<div className="news-feed">
       <h2 className="newsHeader">
         <FontAwesome name="newspaper-o" className="title-icon"/>
         News
       </h2>
-
       <div className="news">
           {Object.keys(newsItems).map((k) => newsItems[k])}
       </div>
     </div>);
-      // <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAASCAYAAABfJS4tAAAAVUlEQVQ4jWNUVlb+z0ADwEQLQxkYGBhYYIy7d+8ykmMAzMcw/TA+zVzMOPzCGD0MCQGYehZ0AWoBol1MKhiGkYcN4ItQjMgjB+ALRooMHl4uHnrJDQCslS4LVhnT2wAAAABJRU5ErkJggg=="/>
   }
 }

@@ -6,6 +6,7 @@ $red-color: #d00;
 $padding: 1rem;
 $padding-small: 0.5rem;
 $padding-tiny: 0.25rem;
+$column-distribution: 4fr 2fr;
 
 $header-font: 'Roboto', sans-serif;
 $body-font: 'Roboto', sans-serif;
@@ -17,15 +18,13 @@ $logo-font: 'Open Sans', sans-serif;
 }
 
 * {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 html {
   height: 100vh;
-  margin:0;
-  padding:0;
 }
 
 body {
@@ -62,24 +61,15 @@ ul {
 }
 
 .grid {
-  overflow:hidden;
   display: grid;
   height: 100vh;
-  // grid-template-columns: 3fr 1fr;
-  // grid-template-rows: 60px 1fr 90px;
-  // grid-gap: $padding;
-  grid-template-columns: 1fr 300px;
-  grid-template-rows: 60px auto auto;
+  grid-gap: $padding;
+  grid-template-columns: $column-distribution;
+  grid-template-rows: 60px 1fr 90px;
   grid-template-areas:
     'header header'
     'content sidebar'
     'footer footer';
-}
-
-@media screen and (min-width:1000px) {
-.grid {
-  grid-template-columns: 2fr 1fr;
-}
 }
 
 .header {
@@ -88,7 +78,7 @@ ul {
   display: grid;
   grid-area: header;
   grid-gap: $padding;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: $column-distribution;
   grid-template-rows: 100%;
 }
 
@@ -125,16 +115,15 @@ ul {
 
 .sidebar {
   max-height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding: $padding;
+  overflow: hidden;
+  margin-right: $padding;
   grid-area: sidebar;
 }
 
 .content {
   grid-area: content;
-  padding: $padding;
-  overflow: auto;
+  margin-left: $padding;
+  overflow: hidden;
 }
 
 .title-icon {

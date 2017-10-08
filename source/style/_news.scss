@@ -1,21 +1,14 @@
-.news-box {
-  grid-area : newsbox;
-  height:100%;
-}
-
 .news {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr 1fr 1fr;
-  // grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
-
 
 .article {
   border: 1px solid $gray-color;
   border-radius: 4px;
   background-color: white;
-  text-align: justify;
   position: relative;
 }
 
@@ -24,6 +17,7 @@
 }
 
 .article-title {
+  text-align: justify;
   margin-bottom: $padding-small;
 }
 
@@ -37,8 +31,9 @@
   right: -21px;
   color: red;
 }
+
 .article-local {
-  border: 5px solid $red-color;  
+  border: 5px solid $red-color;
 }
 
 .article img {
@@ -46,20 +41,4 @@
   object-fit: cover;
   height: 200px;
   overflow-y: hidden;
-  border-radius: 2px;
-}
-
-
-
-@media screen and (max-width: 900px) {
-  .news {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-
-@media screen and (max-width: 700px) {
-  .news {
-    grid-template-columns: 1fr;
-  }
 }
