@@ -31,11 +31,14 @@
   color: #777;
 }
 
-.article-local {
+.article-local-sign {
   position: absolute;
   top: -24px;
   right: -21px;
   color: red;
+}
+.article-local {
+  border: 5px solid $red-color;  
 }
 
 .article img {

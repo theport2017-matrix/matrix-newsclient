@@ -11,14 +11,16 @@ class Article extends React.Component {
     }
 
     return (
-      <div className="article">
+      <div className=
+      {this.props.isLocal ? ("article article-local"):("article")}
+      >
         <img src={this.props.image}/>
         <div className="article-body">
           <h3 className="article-title">{this.props.title}</h3>
           <p className="article-text">{shortBody}</p>
         </div>
         {this.props.isLocal ? (
-          <div className="article-local">
+          <div className="article-local-sign">
             <FontAwesome name="dot-circle-o fa-3x"/>
           </div>) : null
         }
