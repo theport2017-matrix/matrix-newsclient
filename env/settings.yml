@@ -10,5 +10,5 @@
 base-url: 'https://communi.camp'
 announcements-room: '!cLycyFOevWWqdGhQqk:communi.camp'
 message-board-room: '!hRaDEvHwSNCiLSbjzs:communi.camp'
-client-user-id: '@news:communi.camp'
-client-access-token: 'MDAxYWxvY2F0aW9uIGNvbW11bmkuY2FtcAowMDEzaWRlbnRpZmllciBrZXkKMDAxMGNpZCBnZW4gPSAxCjAwMjVjaWQgdXNlcl9pZCA9IEBuZXdzOmNvbW11bmkuY2FtcAowMDE2Y2lkIHR5cGUgPSBhY2Nlc3MKMDAyMWNpZCBub25jZSA9IEpmTFJRX3gqNGFDWGRYXjAKMDAyZnNpZ25hdHVyZSBCqqE2BVHDcxKT0vP54dcpCOp8xeGSA0MvH6YYdCzZDwo'
+client-user-id: '@newsclient:communi.camp'
+client-access-token: 'MDAxYWxvY2F0aW9uIGNvbW11bmkuY2FtcAowMDEzaWRlbnRpZmllciBrZXkKMDAxMGNpZCBnZW4gPSAxCjAwMmJjaWQgdXNlcl9pZCA9IEBuZXdzY2xpZW50OmNvbW11bmkuY2FtcAowMDE2Y2lkIHR5cGUgPSBhY2Nlc3MKMDAyMWNpZCBub25jZSA9IG1vZVMtYWFtKnQ4Ok16azsKMDAyZnNpZ25hdHVyZSDjHbY-YxSBoGTfOlC-wtDG2sSm1Vwie1jaKkhe68-xDgo'
