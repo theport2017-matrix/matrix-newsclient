@@ -2,7 +2,7 @@ import FontAwesome from 'react-fontawesome';
 import moment from 'moment';
 import React from 'react';
 
-import AnnouncementBox from './AnnouncementBox.jsx';
+import AnnouncementBox from './Announcements.jsx';
 import EmergencyOverlay from './Emergency.jsx';
 import News from './News.jsx';
 import Twitter from './Twitter.jsx';
