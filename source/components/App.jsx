@@ -40,6 +40,11 @@ export default class App extends React.Component {
                     this.setState({
                       emergency: content.body
                     });
+                    setTimeout(() => {
+                      this.setState({
+                        emergency: null,
+                      });
+                    }, 10000);
                     document.getElementById('audio').play();
                   }
                 } else {
