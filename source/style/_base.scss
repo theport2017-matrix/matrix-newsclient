@@ -55,10 +55,11 @@ ul {
   display: grid;
   height: 100vh;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 60px 1fr 30px;
+  grid-template-rows: 60px 1fr 60px 30px;
   grid-template-areas:
     'header sidebar-weather'
     'content sidebar'
+    'ticker-tape ticker-tape'
     'footer footer';
 }
 
@@ -73,15 +74,15 @@ ul {
   justify-content: center;
 }
 
+.ticker-tape {
+  grid-area: ticker-tape;
+}
+
 .sidebar {
   display: grid;
   overflow: hidden;
   margin: $padding;
   grid-area: sidebar;
-  grid-template-rows: 1fr 3fr;
-  grid-template-areas:
-    'sidebar-announcements'
-    'sidebar-twitter';
 }
 
 .sidebar-item {
@@ -91,10 +92,6 @@ ul {
   & + & {
     margin-top: $padding;
   }
-}
-
-.sidebar-announcements {
-  grid-area: sidebar-announcements;
 }
 
 .sidebar-twitter {
@@ -136,20 +133,22 @@ ul {
 /*Announcements*/
 .announcement-box {
   grid-area: announcements;
-  line-height: 1.2em;
+  height: 100%;
+  transition: background-color 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.announcement-box li {
-    font-family: $paragraph-font;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    padding: 5px;
+.announcement-box span {
+    font-family: $header-font;
+    font-size: 1.5em;
 }
 
-.announcement-box li.level-warning {
+.announcement-box.level-warning {
     background-color: #fe9;
 }
 
-.announcement-box li.level-info {
+.announcement-box.level-info {
     background-color: #aec6cf;
 }
