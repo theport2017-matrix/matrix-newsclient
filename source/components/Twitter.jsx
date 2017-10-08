@@ -28,7 +28,7 @@ export default class Twitter extends React.Component {
                         <li className="tweet" key={i}>
                             <div className="tweet-title">
                                 <div className="tweet-sender-text">
-                                  <span className="tweet-sender">{item.sender}</span> said:
+                                  <span className="tweet-sender">{item.sender}</span>
                                 </div>
                                 <div className="tweet-calendar">{item.date.calendar().toLowerCase()}</div>
                             </div>
