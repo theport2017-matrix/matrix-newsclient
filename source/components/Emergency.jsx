@@ -17,9 +17,6 @@ export default class EmergencyOverlay extends React.Component {
         flash: !this.state.flash
       })
     }, 500);
-    setTimeout(() => {
-      this.element.style.display = 'none';
-    }, 10000);
   }
 
   render() {
@@ -28,7 +25,7 @@ export default class EmergencyOverlay extends React.Component {
     }
 
     return (
-      <div className="emergency-overlay" ref={(element) => { this.element = element; }}>
+      <div className="emergency-overlay">
         { this.state.flash ? this.props.message : ""}
       </div>
     );

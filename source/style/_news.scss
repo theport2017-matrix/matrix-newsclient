@@ -16,6 +16,7 @@
   border-radius: 4px;
   background-color: white;
   text-align: justify;
+  position: relative;
 }
 
 .article-body {
@@ -28,6 +29,13 @@
 
 .article-text {
   color: #777;
+}
+
+.article-local {
+  position: absolute;
+  top: -24px;
+  right: -21px;
+  color: red;
 }
 
 .article img {

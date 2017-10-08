@@ -3,7 +3,12 @@ import React from 'react';
 
 class Article extends React.Component {
   render() {
-    const shortBody = this.props.body.slice(0, this.props.body.indexOf('.', 50) + 1);
+    let shortBody = this.props.body;
+    if (shortBody.length > 200) {
+      shortBody = shortBody.slice(
+        0, shortBody.indexOf(' ', 200)
+      ).trim() + '...';
+    }
 
     return (
       <div className="article">
@@ -12,6 +17,11 @@ class Article extends React.Component {
           <h3 className="article-title">{this.props.title}</h3>
           <p className="article-text">{shortBody}</p>
         </div>
+        {this.props.isLocal ? (
+          <div className="article-local">
+            <FontAwesome name="dot-circle-o fa-3x"/>
+          </div>) : null
+        }
       </div>
     );
   }
@@ -27,7 +37,12 @@ export default class News extends React.Component {
     const newsItems = {};
 
     globalNews.forEach((article, index) => {
-      const element = <Article key={index} title={article.title} body={article.body} image={article.image}/>;
+      const element = <Article
+        key={index}
+        title={article.title}
+        body={article.body}
+        image={article.image}
+        isLocal={article.local}/>;
 
       if (!newsItems[article.title]) {
         newsItems[article.title] = element;
@@ -39,7 +54,7 @@ export default class News extends React.Component {
     return (<div className="news-feed">
       <h2 className="newsHeader">
         <FontAwesome name="newspaper-o" className="title-icon"/>
-        World News
+        News
       </h2>
 
       <div className="news">

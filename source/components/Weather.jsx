@@ -31,7 +31,7 @@ export default class WeatherBox extends React.Component {
     return (
       <ul className="weather-box">
         {forecast.map((day, index) => (
-          <li className="weather-day">
+          <li key={index} className="weather-day">
             <span className="icon">
               <WeatherIcons name={day.className} />
             </span>
