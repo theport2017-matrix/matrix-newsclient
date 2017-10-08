@@ -29,8 +29,10 @@ export default class News extends React.Component {
       }
     });
 
-    return (<div>
-      <h2 className="newsHeader">News</h2>
+    return (<div className="news-box">
+      <h2 className="newsHeader">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAASCAYAAABfJS4tAAAAVUlEQVQ4jWNUVlb+z0ADwEQLQxkYGBhYYIy7d+8ykmMAzMcw/TA+zVzMOPzCGD0MCQGYehZ0AWoBol1MKhiGkYcN4ItQjMgjB+ALRooMHl4uHnrJDQCslS4LVhnT2wAAAABJRU5ErkJggg=="/>
+      News</h2>
       <div className="news">
           {Object.keys(newsItems).map((k) => newsItems[k])}
       </div>

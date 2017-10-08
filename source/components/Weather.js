@@ -34,10 +34,12 @@ export default class WeatherBox extends React.Component {
             <span className="icon">
               <WeatherIcons name={day.className} />
             </span>
+            <br/>
             <span className="temperature">
               {day.temperature}
               <span className="unit">°C</span>
             </span>
+            <br/>
             {index>0?<span className="timestamp">{day.weekDay}</span>:null}
           </li>
         ))}
