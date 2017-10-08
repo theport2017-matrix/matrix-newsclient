@@ -21,7 +21,7 @@ export default class Twitter extends React.Component {
             <div>
                 <h2>
                   <FontAwesome name="bullhorn" className="title-icon"/>
-                  Tweet Feed
+                  Message Board
                 </h2>
                 <ul className="twitter-feed">
                     {tweets.filter((item) => (item.content.body != undefined)).map((item, i) => (
