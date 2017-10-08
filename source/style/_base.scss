@@ -38,7 +38,7 @@ h2 {
   margin-bottom: $padding-small;
 }
 
-p, .weather-box {
+p {
   font-family: $paragraph-font;
   font-size: 13px;
 }
@@ -151,4 +151,15 @@ ul {
 
 .announcement-box.level-info {
     background-color: #aec6cf;
+}
+
+/* Weather Box */
+
+.weather-box {
+  font-family: $header-font;
+  font-size: 0.7em;
+
+  li {
+    margin-right: 10px;
+  }
 }
