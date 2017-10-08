@@ -5,11 +5,15 @@ class Article extends React.Component {
   render() {
     const shortBody = this.props.body.slice(0, this.props.body.indexOf('.', 50) + 1);
 
-    return (<div className="article">
-      <img src={this.props.image}/>
-      <h3>{this.props.title}</h3>
-      <p>{shortBody}</p>
-    </div>);
+    return (
+      <div className="article">
+        <img src={this.props.image}/>
+        <div className='article-body'>
+          <h3>{this.props.title}</h3>
+          <p>{shortBody}</p>
+        </div>
+      </div>
+    );
   }
 }
 

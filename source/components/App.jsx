@@ -84,29 +84,27 @@ export default class App extends React.Component {
     return (
       <div className="grid">
         <EmergencyOverlay message={this.state.emergency}/>
-        <div className="grid-item header">
+        <div className="header">
           <div className="header-title">
             <h1>
               C<FontAwesome name="dot-circle-o"/>mmuniCamp
             </h1>
           </div>
-        </div>
-        <div className="grid-item content">
-          <News news={this.state.news}/>
-        </div>
-        <div className="grid-item sidebar-item sidebar-weather">
-          <WeatherBox data={this.state.weather}/>
-        </div>
-        <div className="grid-item sidebar">
-          <div className="sidebar-item sidebar-twitter">
-            <Twitter ref={(box) => {this.twitterBox = box}}/>
+          <div className="header-weather">
+            <WeatherBox data={this.state.weather}/>
           </div>
         </div>
-        <div className="grid-item ticker-tape">
-          <AnnouncementBox announcements={this.state.announcements}/>
+        <div className="content">
+          <News news={this.state.news}/>
         </div>
-        <div className="grid-item footer">
-          <div>
+        <div className="sidebar-item sidebar">
+          <Twitter ref={(box) => {this.twitterBox = box}}/>
+        </div>
+        <div className="footer">
+          <div className="ticker-tape">
+            <AnnouncementBox announcements={this.state.announcements}/>
+          </div>
+          <div className="footer-about">
             Built with React and powered by [matrix] and newsAPI.org
           </div>
         </div>

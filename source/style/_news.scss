@@ -5,6 +5,18 @@
   justify-content: space-between;
 }
 
+.article {
+  border: 1px solid $gray-color;
+  border-radius: 4px;
+  width: 30%;
+  height: 45%;
+  background-color: white;
+}
+
+.article-body {
+  padding: $padding-small;
+}
+
 .article img {
   width: 100%;
   object-fit: cover;
@@ -14,11 +26,4 @@
 .article p {
   overflow-y: hidden;
   max-height: 95px;
-}
-
-.article {
-  margin: 0.25% 0%;
-  width: 30%;
-  height: 45%;
-  background-color: white;
 }

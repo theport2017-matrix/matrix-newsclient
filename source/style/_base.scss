@@ -10,6 +10,11 @@ $header-font: 'Roboto', sans-serif;
 $body-font: 'Roboto', sans-serif;
 $logo-font: 'Open Sans', sans-serif;
 
+%v-align {
+  display: flex;
+  align-items: center;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -56,80 +61,69 @@ ul {
 .grid {
   display: grid;
   height: 100vh;
+  grid-gap: $padding;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 60px 1fr 60px 30px;
+  grid-template-rows: 60px 1fr 90px;
   grid-template-areas:
-    'header sidebar-weather'
+    'header header'
     'content sidebar'
-    'ticker-tape ticker-tape'
     'footer footer';
 }
 
 .header {
-  display: flex;
+  background: $highlight-color;
+  color: white;
+  display: grid;
   grid-area: header;
-  font-weight: bold;
+  grid-gap: $padding;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 100%;
 }
 
-.header-title h1 {
+.header-title {
+  @extend %v-align;
+  font-weight: bold;
   font-family: $logo-font;
+  margin-left: $padding;
+}
+
+.header-weather {
+  @extend %v-align;
+  margin-right: $padding;
 }
 
 .footer {
+  display: grid;
   grid-area: footer;
-  justify-content: center;
+  grid-template-columns: 100%;
+  grid-template-rows: 60px 30px;
 }
 
-.ticker-tape {
-  grid-area: ticker-tape;
+.footer-ticker-tape {
+  @extend %v-align;
+}
+
+.footer-about {
+  @extend %v-align;
+  display: flex;
+  justify-content: center;
+  background: $highlight-color;
+  color: white;
 }
 
 .sidebar {
-  display: grid;
-  overflow: hidden;
-  margin: $padding;
-  grid-area: sidebar;
-}
-
-.sidebar-item {
   max-height: 100%;
   overflow: hidden;
-
-  & + & {
-    margin-top: $padding;
-  }
-}
-
-.sidebar-twitter {
-  grid-area: sidebar-twitter;
-}
-
-.sidebar-weather {
-  display: flex;
-  align-items: center;
-  grid-area: sidebar-weather;
-  background: $highlight-color;
-  padding: 0 $padding;
+  margin-right: $padding;
+  grid-area: sidebar;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   grid-area: content;
-  margin: $padding;
+  margin-left: $padding;
   overflow: hidden;
-}
-
-.header,
-.footer {
-  background: $highlight-color;
-  color: white;
-  display: flex;
-  padding: 0 $padding;
-
-  > * {
-    align-self: center;
-  }
 }
 
 .title-icon {
