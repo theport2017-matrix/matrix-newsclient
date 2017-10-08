@@ -10,6 +10,7 @@ import WeatherBox from './Weather.jsx';
 
 const ROOM_ID = '!OfRBJBuhWHWNKplCtn:matrix.org';
 const TWITTER_ROOM_ID = '!kgfNoSRLkBFxmVGvxw:matrix.org';
+const MAX_ANNOUNCEMENT_AGE = 5; // hours
 
 let backPaginated = false;
 
@@ -34,7 +35,7 @@ export default class App extends React.Component {
             switch (event.getType()) {
               case 'm.room.message':
                 const ts = moment(event.getTs());
-                if (moment().diff(ts, 'hours') > 1) {
+                if (moment().diff(ts, 'hours') > MAX_ANNOUNCEMENT_AGE) {
                   // exclude announcements older than 1h
                   return;
                 }
