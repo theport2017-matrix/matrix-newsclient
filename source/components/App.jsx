@@ -8,7 +8,7 @@ import News from './News.jsx';
 import Twitter from './Twitter.jsx';
 import WeatherBox from './Weather.jsx';
 
-const ROOM_ID = '!OfRBJBuhWHWNKplCtn:matrix.org';
+const ROOM_ID = '!cLycyFOevWWqdGhQqk:communi.camp';
 const TWITTER_ROOM_ID = '!kgfNoSRLkBFxmVGvxw:matrix.org';
 const MAX_ANNOUNCEMENT_AGE = 5; // hours
 
