@@ -35,7 +35,9 @@ export default class News extends React.Component {
     // TODO: Filter on `local` key
     const globalNews = this.props.news.sort((a,b) => {
         return b._timeReceived - a._timeReceived;
-    }).slice(0, 6);
+    }).slice(0, 6).filter((article) => {
+      return article.body.length > 50;
+    });
     const newsItems = {};
 
     globalNews.forEach((article, index) => {
