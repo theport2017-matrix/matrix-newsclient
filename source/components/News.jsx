@@ -31,27 +31,18 @@ class Article extends React.Component {
 
 export default class News extends React.Component {
   render() {
-
-    // TODO: Filter on `local` key
-    const globalNews = this.props.news.sort((a,b) => {
-        return b._timeReceived - a._timeReceived;
-    }).slice(0, 6).filter((article) => {
+    const newsArticles = this.props.news.filter((article) => {
       return article.body.length > 50;
-    });
-    const newsItems = {};
-
-    globalNews.forEach((article, index) => {
-      const element = <Article
+    }).sort((a,b) => {
+        return b._timeReceived - a._timeReceived;
+    }).map((article, index) => {
+      return <Article
         key={index}
         title={article.title}
         body={article.body}
         image={article.image}
         isLocal={article.local}/>;
-
-      if (!newsItems[article.title]) {
-        newsItems[article.title] = element;
-      }
-    });
+    }).slice(0, 6);
 
     return (<div className="news-feed">
       <h2 className="newsHeader">
@@ -59,7 +50,7 @@ export default class News extends React.Component {
         News
       </h2>
       <div className="news">
-          {Object.keys(newsItems).map((k) => newsItems[k])}
+          {newsArticles}
       </div>
     </div>);
   }
