@@ -10,4 +10,15 @@
   color: #ff2233;
   font-family: Impact;
   font-size: 10em;
+  animation-name: emergency-anim;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes emergency-anim {
+    0%   {background-color: #211;color: #f00;}
+    25%  {background-color: #111;color: #e00;}
+    50%  {background-color: #111;color: #e00;}
+    75%  {background-color: #211;color: #f00;}
+    100% {background-color: #211;color: #f00;}
 }
