@@ -1,3 +1,4 @@
+import FontAwesome from 'react-fontawesome';
 import moment from 'moment';
 import React from 'react';
 
@@ -18,7 +19,10 @@ export default class Twitter extends React.Component {
         const tweets = this.state.tweets;
         return (
             <div>
-                <h2>Tweet Feed</h2>
+                <h2>
+                  <FontAwesome name="bullhorn" className="title-icon"/>
+                  Tweet Feed
+                </h2>
                 <ul className="twitter-feed">
                     {tweets.filter((item) => (item.content.body != undefined)).map((item, i) => (
                         <li className="tweet" key={i}>

@@ -1,3 +1,4 @@
+import FontAwesome from 'react-fontawesome';
 import React from 'react';
 
 class Article extends React.Component {
@@ -29,8 +30,11 @@ export default class News extends React.Component {
       }
     });
 
-    return (<div>
-      <h2 className="newsHeader">News</h2>
+    return (<div className="news-feed">
+      <h2 className="newsHeader">
+        <FontAwesome name="newspaper-o" className="title-icon"/>
+        News
+      </h2>
       <div className="news">
           {Object.keys(newsItems).map((k) => newsItems[k])}
       </div>

@@ -70,6 +70,7 @@ ul {
 
 .footer {
   grid-area: footer;
+  justify-content: center;
 }
 
 .sidebar {
@@ -122,15 +123,14 @@ ul {
   color: white;
   display: flex;
   padding: 0 $padding;
+
+  > * {
+    align-self: center;
+  }
 }
 
-.header > *,
-.footer > * {
-  align-self: center;
-}
-
-.footer {
-  justify-content: center;
+.title-icon {
+  margin-right: $padding-tiny;
 }
 
 /*Announcements*/
