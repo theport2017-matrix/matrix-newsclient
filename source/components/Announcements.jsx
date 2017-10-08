@@ -8,7 +8,7 @@ export default class AnnouncementBox extends React.Component {
       this.state = {
         message: {
             level: 'info',
-            body: 'Loading...'
+            body: ''
         }
       };
   }
@@ -20,7 +20,9 @@ export default class AnnouncementBox extends React.Component {
       // filter out redacted messages
       const announcements = this.props.announcements.filter((elem) => elem.body != null);
 
-      if (index >= announcements.length) {
+      if (!announcements.length) {
+        return;
+      } else if (index >= announcements.length) {
         index = 0;
       }
 
