@@ -8,9 +8,9 @@ class Article extends React.Component {
     return (
       <div className="article">
         <img src={this.props.image}/>
-        <div className='article-body'>
-          <h3>{this.props.title}</h3>
-          <p>{shortBody}</p>
+        <div className="article-body">
+          <h3 className="article-title">{this.props.title}</h3>
+          <p className="article-text">{shortBody}</p>
         </div>
       </div>
     );
@@ -37,7 +37,7 @@ export default class News extends React.Component {
     return (<div className="news-feed">
       <h2 className="newsHeader">
         <FontAwesome name="newspaper-o" className="title-icon"/>
-        News
+        World News
       </h2>
       <div className="news">
           {Object.keys(newsItems).map((k) => newsItems[k])}
