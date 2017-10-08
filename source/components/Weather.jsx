@@ -27,7 +27,8 @@ export default class WeatherBox extends React.Component {
         temperature: day.temperature
       };
     }).filter((d) => d.timestamp.diff(moment().startOf('day'), 'seconds') >= 0)
-      .sort((d1, d2) => d1.timestamp.subtract(d2));
+      .sort((d1, d2) => d1.timestamp.diff(d2.timestamp, 'days'));
+
     return (
       <ul className="weather-box">
         {forecast.map((day, index) => (
