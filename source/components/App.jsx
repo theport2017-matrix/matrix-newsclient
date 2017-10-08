@@ -2,11 +2,11 @@ import FontAwesome from 'react-fontawesome';
 import moment from 'moment';
 import React from 'react';
 
-import WeatherBox from './Weather';
-import AnnouncementBox from './AnnouncementBox.jsx';
-import News from './News';
-import Twitter from './Twitter';
-import EmergencyOverlay from './Emergency';
+import AnnouncementBox from './Announcements.jsx';
+import EmergencyOverlay from './Emergency.jsx';
+import News from './News.jsx';
+import Twitter from './Twitter.jsx';
+import WeatherBox from './Weather.jsx';
 
 const ROOM_ID = '!OfRBJBuhWHWNKplCtn:matrix.org';
 const TWITTER_ROOM_ID = '!kgfNoSRLkBFxmVGvxw:matrix.org';
@@ -84,29 +84,27 @@ export default class App extends React.Component {
     return (
       <div className="grid">
         <EmergencyOverlay message={this.state.emergency}/>
-        <div className="grid-item header">
+        <div className="header">
           <div className="header-title">
             <h1>
               C<FontAwesome name="dot-circle-o"/>mmuniCamp
             </h1>
           </div>
+          <div className="header-weather">
+            <WeatherBox data={this.state.weather}/>
+          </div>
         </div>
-        <div className="grid-item content">
+        <div className="content">
           <News news={this.state.news}/>
         </div>
-        <div className="grid-item sidebar-item sidebar-weather">
-          <WeatherBox data={this.state.weather}/>
+        <div className="sidebar-item sidebar">
+          <Twitter ref={(box) => {this.twitterBox = box}}/>
         </div>
-        <div className="grid-item sidebar">
-          <div className="sidebar-item sidebar-announcements">
+        <div className="footer">
+          <div className="ticker-tape">
             <AnnouncementBox announcements={this.state.announcements}/>
           </div>
-          <div className="sidebar-item sidebar-twitter">
-            <Twitter ref={(box) => {this.twitterBox = box}}/>
-          </div>
-        </div>
-        <div className="grid-item footer">
-          <div>
+          <div className="footer-about">
             Built with React and powered by [matrix] and newsAPI.org
           </div>
         </div>

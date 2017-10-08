@@ -1,0 +1,21 @@
+.announcement-box {
+  grid-area: announcements;
+  height: 100%;
+  transition: background-color 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announcement-box span {
+  font-family: $header-font;
+  font-size: 1.5em;
+}
+
+.announcement-box.level-warning {
+  background-color: #fe9;
+}
+
+.announcement-box.level-info {
+  background-color: #aec6cf;
+}

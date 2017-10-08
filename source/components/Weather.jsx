@@ -26,7 +26,8 @@ export default class WeatherBox extends React.Component {
         className: ICON_MAP[day.type],
         temperature: day.temperature
       };
-    }).sort((d1, d2) => d1.timestamp.subtract(d2));
+    }).filter((d) => d.timestamp.diff(moment().startOf('day'), 'seconds') >= 0)
+      .sort((d1, d2) => d1.timestamp.subtract(d2));
     return (
       <ul className="weather-box">
         {forecast.map((day, index) => (
